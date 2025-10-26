@@ -118,23 +118,6 @@ The VADER sentiment analyzer uses compound scores to classify sentiment:
 - **Negative**: Compound score ≤ -0.05
 - **Neutral**: Compound score between -0.05 and 0.05
 
-## 📁 Project Structure
-
-```
-sentiment_analysis_scraper/
-├── app.py                      # Flask backend API
-├── venv/                       # Python virtual environment
-├── README.md                   # This file
-└── sentiment-dashboard/        # React frontend
-    ├── src/
-    │   ├── App.jsx            # Main React component
-    │   ├── App.css            # Styling
-    │   ├── main.jsx           # React entry point
-    │   └── index.css          # Global styles
-    ├── package.json           # Node dependencies
-    └── vite.config.js         # Vite configuration
-```
-
 ## 🛠️ Technologies Used
 
 ### Backend
@@ -167,28 +150,6 @@ In `app.py`, modify the `max_results` parameter:
 response = client.search_recent_tweets(query, max_results=50)  # Change from 100
 ```
 
-#### Update frontend API URL:
-In `sentiment-dashboard/src/App.jsx`, update the URL:
-```javascript
-const response = await axios.post('http://your-api-url/analyze', { topic });
-```
-
-## 🚀 Deployment
-
-### Quick Deploy Options
-
-1. **Frontend**: Deploy to Vercel, Netlify, or GitHub Pages
-2. **Backend**: Deploy to Render, Heroku, or Railway
-3. **Environment Variables**: Set `TWITTER_BEARER_TOKEN` in your hosting platform
-
-### Production Checklist
-
-- [ ] Move bearer token to environment variables
-- [ ] Update CORS settings to allow only your frontend domain
-- [ ] Set up error logging and monitoring
-- [ ] Add rate limiting to prevent API abuse
-- [ ] Configure production build for frontend
-- [ ] Set up custom domain (optional)
 
 ## 🐛 Troubleshooting
 
@@ -241,49 +202,17 @@ Analyzes sentiment for posts about a given topic.
     }
   ]
 }
-```
 
-**Error Response:**
-```json
-{
-  "error": "Could not find tweets on this topic."
-}
-```
-
-## 🤝 Contributing
-
-Contributions are welcome! Here are some ideas:
-
-- Add more sentiment analysis models (TextBlob, Transformers)
-- Implement historical data tracking
-- Add sentiment trends over time
-- Support for multiple languages
-- Export results as PDF/CSV
-- User authentication and saved searches
-
-## 📄 License
-
-This project is open source and available under the MIT License.
 
 ## 👤 Author
 
 Created as a demonstration of full-stack development with real-time data analysis.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **VADER Sentiment** - Hutto, C.J. & Gilbert, E.E. (2014)
 - **X (Twitter) API** - For providing access to social media data
 - **React & Chart.js communities** - For excellent documentation and support
 
-## 📞 Support
-
-If you encounter any issues or have questions:
-1. Check the troubleshooting section above
-2. Review the X API documentation
-3. Open an issue in the repository
-
----
-
 **Note**: This application uses the X (formerly Twitter) API. Results are based on 10 recent posts scraped from X. The free developer API only provides access to 100 posts per month.
 
-Made with ❤️ using Flask, React, and modern web technologies.
