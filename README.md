@@ -203,5 +203,7 @@ Analyzes sentiment for posts about a given topic.
   ]
 }
 
-**Note**: This application uses the X (formerly Twitter) API. Results are based on 10 recent posts scraped from X. The free developer API only provides access to 100 posts per month.
+**Note**: This application uses the X (formerly Twitter) API. 
+Results are based on 10 recent posts scraped from X. 
+The free developer API only provides access to 100 posts per month.
 
