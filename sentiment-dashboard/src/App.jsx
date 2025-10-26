@@ -20,7 +20,7 @@ function App() {
     setChartData(null);
     setSampleTexts([]);
     try {
-      const response = await axios.post('http://127.0.0.1:5000/analyze', { topic });
+      const response = await axios.post('https://x-sentiment-analysis-6znh.onrender.com/analyze', { topic });
       const { positive, negative, neutral } = response.data.results;
 
       setChartData({
