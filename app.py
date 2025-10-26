@@ -2,6 +2,11 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import tweepy
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -42,8 +47,12 @@ def analyze_sentiment():
     return jsonify(final_response)
 
 def fetch_tweets(topic):
-    # NOTE: You need to get these keys from the Twitter Developer Portal
-    bearer_token = 'YOUR_BEARER_TOKEN'
+    # Get bearer token from environment variable
+    bearer_token = os.getenv('TWITTER_BEARER_TOKEN')
+    
+    if not bearer_token:
+        raise ValueError("TWITTER_BEARER_TOKEN not found in environment variables")
+    
     client = tweepy.Client(bearer_token)
 
     # Search for recent tweets, excluding retweets
