@@ -1,0 +1,6 @@
+# Ignore CSS in language statistics
+*.css linguist-vendored
+
+# You can also ignore other files if needed:
+# *.html linguist-vendored
+# *.scss linguist-vendored
