@@ -203,16 +203,5 @@ Analyzes sentiment for posts about a given topic.
   ]
 }
 
-
-## 👤 Author
-
-Created as a demonstration of full-stack development with real-time data analysis.
-
-## Acknowledgments
-
-- **VADER Sentiment** - Hutto, C.J. & Gilbert, E.E. (2014)
-- **X (Twitter) API** - For providing access to social media data
-- **React & Chart.js communities** - For excellent documentation and support
-
 **Note**: This application uses the X (formerly Twitter) API. Results are based on 10 recent posts scraped from X. The free developer API only provides access to 100 posts per month.
 
