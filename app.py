@@ -15,6 +15,11 @@ CORS(app)  # Enable CORS for all routes
 # Initialize VADER sentiment analyzer
 analyzer = SentimentIntensityAnalyzer()
 
+@app.route('/')
+def home():
+    # Return a simple message and a 200 OK status code
+    return "OK", 200
+
 @app.route('/analyze', methods=['POST'])
 def analyze_sentiment():
     data = request.get_json()
